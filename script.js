@@ -56,6 +56,7 @@ To handle click events, we use an event listener.
 // console.log((document.querySelector(".guess").value = 23));
 
 let score = 20;
+let highscore = 0;
 let secretNumber = Math.trunc(Math.random() * 21);
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
@@ -82,6 +83,8 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (guess === secretNumber) {
     //document.querySelector(".number").textContent = secretNumber;
     displayNumber1(secretNumber);
+    if (score > highscore) { 
+      highscore = score; document.querySelector(".highscore").textContent = highscore; }
     //document.querySelector(".message").textContent = "Correct Number";
     displayMessage("Correct Number");
     HighestScore(score);
