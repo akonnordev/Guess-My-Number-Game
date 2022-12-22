@@ -63,6 +63,9 @@ const displayMessage = function (message) {
 const displayScore = function (score) {
   document.querySelector(".score").textContent = score;
 };
+const HighestScore = function (highscore) {
+  document.querySelector(".highscore").textContent = highscore;
+};
 const displayNumber1 = function (number1) {
   document.querySelector(".number").textContent = number1;
 };
@@ -81,6 +84,7 @@ document.querySelector(".check").addEventListener("click", function () {
     displayNumber1(secretNumber);
     //document.querySelector(".message").textContent = "Correct Number";
     displayMessage("Correct Number");
+    HighestScore(score);
     //document.querySelector("body").style.backgroundColor = "#60b347";
     displayBody("#60b347");
     document.querySelector(".number").style.width = "30rem";
@@ -125,6 +129,7 @@ document.querySelector(".check").addEventListener("click", function () {
 
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
+  secretNumber = Math.trunc(Math.random() * 21);
   //document.querySelector(".score").textContent = score;
   displayScore(score);
   //document.querySelector("body").style.backgroundColor = "#222";
